@@ -20,11 +20,22 @@ await M.init();
 
 V.uicalendar.createEvents(M.getEvents('mmi1'));
 
-let prev = document.querySelector('#prev');
-prev.addEventListener("click", () => V.uicalendar.prev());
+V.uicalendar.createEvents(M.getEvents('mmi2'));
 
-let actu = document.querySelector('#actu');
-actu.addEventListener("click", () => V.uicalendar.today());
+V.uicalendar.createEvents(M.getEvents('mmi3'));
 
-let next = document.querySelector('#next');
-next.addEventListener("click", () => V.uicalendar.next());
+V.ColorCalendar();
+
+/*let events = M.getEvents("mmi1");
+for (let event of events){
+  if (event.title.includes("CM")) {
+    V.uicalendar.EventObject.backgroundColor('#FFFFF');
+  }
+}*/
+
+let events = M.getEvents("mmi1");
+for (let event of events){
+if (event.title.includes("CM")) {
+  event.backgroundColor = '#FFFFFF';
+  console.log(event.backgroundColor);
+}}
