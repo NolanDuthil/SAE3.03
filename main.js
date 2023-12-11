@@ -18,25 +18,13 @@ import { V } from "./js/view.js";
 // loadind data (and wait for it !)
 await M.init();
 
-// sample events for testing
-let edt = [
-  {
-    id: '1',
-    calendarId: '1',
-    title: 'my event',
-    category: 'time',
-    start: '2023-12-11T08:30:00',
-    end: '2023-12-11T10:30:00',
-  },
-  {
-    id: '2',
-    calendarId: '1',
-    title: 'second event',
-    category: 'time',
-    start: '2023-12-13T14:00:00',
-    end: '2023-12-13T15:30:00',
-  },
-]
+V.uicalendar.createEvents(M.getEvents('mmi1'));
 
-// creating events in the calendar
-V.uicalendar.createEvents( M.getEvents('mmi1') );
+let prev = document.querySelector('#prev');
+prev.addEventListener("click", () => V.uicalendar.prev());
+
+let actu = document.querySelector('#actu');
+actu.addEventListener("click", () => V.uicalendar.today());
+
+let next = document.querySelector('#next');
+next.addEventListener("click", () => V.uicalendar.next());
