@@ -108,6 +108,11 @@ function handlerClickOnNav(ev) {
     V.uicalendar.createEvents(M.EventAllByGroup(ev.target.value));
     
   }
+
+  if(ev.target.id == 'search'){
+    let search = ev.target.value;
+    console.log(M.Search(search));
+  }
   
 }
 

@@ -45,13 +45,22 @@ class EventManager {
 
     EventByGroup(groupe) {
         let res = this.#events.filter(event => event.groups.includes(groupe));
-        return res.map( event => {
+        return res.map(event => {
             let obj = event.toObject();
             obj.calendarId = this.#id;
             return obj;
-    });
+        });
 
-}
+    }
+
+    Search(tag) {
+        let res = this.#events.filter(event => event.summary.includes(tag) || event.location.includes(tag));
+        return res.map(event => {
+            let obj = event.toObject();
+            obj.calendarId = this.#id;
+            return obj;
+        });
+    }
 }
 
 export { EventManager };

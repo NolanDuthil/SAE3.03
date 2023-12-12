@@ -46,6 +46,8 @@ V.ColorCalendar = function () {
 
 let nav = document.querySelector('.nav');
 nav.addEventListener("click", handlerClickOnNav)
+let search = document.querySelector("#search");
+search.addEventListener("keyup", handlerClickOnNav)
 
 
 
