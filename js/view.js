@@ -18,41 +18,57 @@ V.uicalendar = new Calendar('#calendar', {
     eventView: ['time'],
   },
   template: {
-    time: function(event) {
+    time: function (event) {
       return `<span style="color: white;">${event.title}</span>`;
     }
   },
- 
- 
+
+
 });
 
 /*let check = document.querySelectorAll('input[type="checkbox]');
 check.addEventListener("click", () => V.uicalendar.setCalendarVisibility());*/
 
-V.ColorCalendar = function(){
+V.ColorCalendar = function () {
   V.uicalendar.setCalendarColor('mmi1', {
-    backgroundColor : '#FF0000'});
-  
-V.uicalendar.setCalendarColor('mmi2', {
-      backgroundColor : '#00FF00'});
-  
-V.uicalendar.setCalendarColor('mmi3', {
-        backgroundColor : '#0000FF'});
+    backgroundColor: '#FF0000'
+  });
+
+  V.uicalendar.setCalendarColor('mmi2', {
+    backgroundColor: '#00FF00'
+  });
+
+  V.uicalendar.setCalendarColor('mmi3', {
+    backgroundColor: '#0000FF'
+  });
 }
 
 let nav = document.querySelector('.nav');
 nav.addEventListener("click", handlerClickOnNav)
 
-function handlerClickOnNav(ev){
-  if(ev.target.id == "prev"){
+function handlerClickOnNav(ev) {
+  if (ev.target.id == "prev") {
     V.uicalendar.prev()
   }
-  if(ev.target.id == "actu"){
+  if (ev.target.id == "actu") {
     V.uicalendar.today()
   }
-  if(ev.target.id == "next"){
+  if (ev.target.id == "next") {
     V.uicalendar.next()
   }
+
+  if (ev.target.id == "mmi1") {
+    V.uicalendar.setCalendarVisibility("mmi1", ev.target.checked);
+  }
+
+  if (ev.target.id == "mmi2") {
+    V.uicalendar.setCalendarVisibility("mmi2", ev.target.checked);
+  }
+
+  if (ev.target.id == "mmi3") {
+    V.uicalendar.setCalendarVisibility("mmi3", ev.target.checked);
+  }
+
 }
 
 
