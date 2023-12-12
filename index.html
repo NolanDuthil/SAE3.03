@@ -15,6 +15,9 @@
         <button id="prev">Précédent</button>
         <button id="actu">Actuelle</button>
         <button id="next">Suivant</button>
+        <ul style="display: flex; flex-direction: row;">
+          <li style="padding-right: 2rem;">
+        <h2>Promos</h2>
         <div>
           <input type="checkbox" id="mmi1" name="MMI1" checked />
           <label for="mmi1">MMI1</label>
@@ -27,63 +30,25 @@
           <input type="checkbox" id="mmi3" name="MMI3" checked />
           <label for="mmi3">MMI3</label>
         </div>
-        <ul class="groupe__ul" style="display: flex; flex-direction: row;">
-          <li class="BUT1">
-            <h2>BUT1</h2>
-            <div>
-              <input type="checkbox" id="BUT1-G1" name="BUT1-G1" checked />
-              <label for="BUT1-G1">BUT1-G1</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT1-G21" name="BUT1-G21" checked />
-              <label for="BUT1-G21">BUT1-G21</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT1-G22" name="BUT1-G22" checked />
-              <label for="BUT1-G22">BUT1-G22</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT1-G3" name="BUT1-G3" checked />
-              <label for="BUT1-G3">BUT1-G3</label>
-            </div>
           </li>
-          <li class="BUT2">
-            <h2>BUT2</h2>
-            <div>
-              <input type="checkbox" id="BUT2-G1" name="BUT2-G1" checked />
-              <label for="BUT2-G1">BUT2-G1</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT2-G21" name="BUT2-G21" checked />
-              <label for="BUT2-G21">BUT2-G21</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT2-G22" name="BUT2-G22" checked />
-              <label for="BUT2-G22">BUT2-G22</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT2-G3" name="BUT2-G3" checked />
-              <label for="BUT2-G3">BUT2-G3</label>
-            </div>
-          </li>
-          <li class="BUT3">
-            <h2>BUT3</h2>
-            <div>
-              <input type="checkbox" id="BUT3-G1" name="BUT3-G1" checked />
-              <label for="BUT3-G1">BUT3-G1</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT3-G21" name="BUT3-G21" checked />
-              <label for="BUT3-G21">BUT3-G21</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT3-G22" name="BUT3-G22" checked />
-              <label for="BUT3-G22">BUT3-G22</label>
-            </div>
-            <div>
-              <input type="checkbox" id="BUT3-G3" name="BUT3-G3" checked />
-              <label for="BUT3-G3">BUT3-G3</label>
-            </div>
+
+          <li>
+        <h2>Groupe</h2>
+        <select name="groupe" id="groupe" multiple>
+          <option value="" selected disabled hidden>Choisir son groupe</option>
+          <option value="BUT1-G1">BUT1-G1</option>
+          <option value="BUT1-G21">BUT1-G21</option>
+          <option value="BUT1-G22">BUT1-G22</option>
+          <option value="BUT1-G3">BUT1-G3</option>
+          <option value="BUT2-G1">BUT2-G1</option>
+          <option value="BUT2-G21">BUT2-G21</option>
+          <option value="BUT2-G22">BUT2-G22</option>
+          <option value="BUT2-G3">BUT2-G3</option>
+          <option value="BUT3-G1">BUT3-G1</option>
+          <option value="BUT3-G21">BUT3-G21</option>
+          <option value="BUT3-G22">BUT3-G22</option>
+          <option value="BUT3-G3">BUT3-G3</option>
+        </select>
           </li>
         </ul>
 
