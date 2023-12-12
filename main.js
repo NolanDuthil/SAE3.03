@@ -33,9 +33,9 @@ for (let event of events){
   }
 }*/
 
-let events = M.getEvents("mmi1");
+/*let events = M.getEvents("mmi1");
 for (let event of events){
 if (event.title.includes("CM")) {
   event.backgroundColor = '#FFFFFF';
   console.log(event.backgroundColor);
-}}
+}}*/

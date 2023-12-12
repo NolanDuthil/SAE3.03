@@ -26,24 +26,33 @@ V.uicalendar = new Calendar('#calendar', {
  
 });
 
-let prev = document.querySelector('#prev');
-prev.addEventListener("click", () => V.uicalendar.prev());
-
-let actu = document.querySelector('#actu');
-actu.addEventListener("click", () => V.uicalendar.today());
-
-let next = document.querySelector('#next');
-next.addEventListener("click", () => V.uicalendar.next());
+/*let check = document.querySelectorAll('input[type="checkbox]');
+check.addEventListener("click", () => V.uicalendar.setCalendarVisibility());*/
 
 V.ColorCalendar = function(){
   V.uicalendar.setCalendarColor('mmi1', {
     backgroundColor : '#FF0000'});
   
-  V.uicalendar.setCalendarColor('mmi2', {
+V.uicalendar.setCalendarColor('mmi2', {
       backgroundColor : '#00FF00'});
   
-  V.uicalendar.setCalendarColor('mmi3', {
+V.uicalendar.setCalendarColor('mmi3', {
         backgroundColor : '#0000FF'});
+}
+
+let nav = document.querySelector('.nav');
+nav.addEventListener("click", handlerClickOnNav)
+
+function handlerClickOnNav(ev){
+  if(ev.target.id == "prev"){
+    V.uicalendar.prev()
+  }
+  if(ev.target.id == "actu"){
+    V.uicalendar.today()
+  }
+  if(ev.target.id == "next"){
+    V.uicalendar.next()
+  }
 }
 
 export { V };
