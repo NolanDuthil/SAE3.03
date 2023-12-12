@@ -26,16 +26,58 @@ V.uicalendar.createEvents(M.getEvents('mmi3'));
 
 V.ColorCalendar();
 
-/*let events = M.getEvents("mmi1");
-for (let event of events){
-  if (event.title.includes("CM")) {
-    V.uicalendar.EventObject.backgroundColor('#FFFFF');
-  }
-}*/
+let event1 = M.getEvents("mmi1");
+let event2 = M.getEvents("mmi2");
+let event3 = M.getEvents("mmi3");
 
-/*let events = M.getEvents("mmi1");
-for (let event of events){
-if (event.title.includes("CM")) {
-  event.backgroundColor = '#FFFFFF';
-  console.log(event.backgroundColor);
-}}*/
+let changes = {};
+
+  event1.forEach(event => {
+    if (event.title.includes("CM")) {
+      changes.backgroundColor = "#660000"
+    }
+    else if (event.title.includes("TD")) {
+      changes.backgroundColor = "#990000"
+    }
+    else if (event.title.includes("TP")) {
+      changes.backgroundColor = "#CC0000"
+    }
+    else {
+      changes.backgroundColor = "#FF0000"
+    }
+    V.uicalendar.updateEvent(event.id, event.calendarId, changes);
+  });
+  
+  event2.forEach(event => {
+    if (event.title.includes("CM")) {
+      changes.backgroundColor = "#355E3B"
+    }
+    else if (event.title.includes("TD")) {
+      changes.backgroundColor = "#228B22"
+    }
+    else if (event.title.includes("TP")) {
+      changes.backgroundColor = "#50C878"
+    }
+    else {
+      changes.backgroundColor = "#00FF00"
+    }
+    V.uicalendar.updateEvent(event.id, event.calendarId, changes);
+  });
+  
+  event3.forEach(event => {
+    if (event.title.includes("CM")) {
+      changes.backgroundColor = "#00008B"
+    }
+    else if (event.title.includes("TD")) {
+      changes.backgroundColor = "#0047AB"
+    }
+    else if (event.title.includes("TP")) {
+      changes.backgroundColor = "#000FFF"
+    }
+    else {
+      changes.backgroundColor = "#0000FF"
+    }
+    V.uicalendar.updateEvent(event.id, event.calendarId, changes);
+  });
+
+
