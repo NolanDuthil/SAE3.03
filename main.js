@@ -108,4 +108,10 @@ if (window.matchMedia("(max-width: 400px)").matches){
   V.uicalendar.changeView('day');
 }
 
+//sessionStorage.setItem("promos", "mmi1,mmi2,mmi3");
+
+var data = sessionStorage.getItem("promos");
+
+let datagr = data.split(",");
+
 export{handlerClickOnNav};
