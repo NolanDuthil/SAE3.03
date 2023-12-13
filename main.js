@@ -73,7 +73,7 @@ function handlerClickOnNav(ev) {
     for (let ev of all) {
       ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
     }
-    V.uicalendar.createEvents(all);
+    V.uicalendar.createEvents(all); 
     
   }
 
@@ -98,7 +98,14 @@ function handlerClickOnNav(ev) {
   if (ev.target.id == "month") {
     V.uicalendar.changeView("month");
   }
-  
+
+}
+
+if (window.matchMedia("(max-width: 400px)").matches){
+  V.uicalendar.setOptions({
+    defaultView: 'day',
+  })
+  V.uicalendar.changeView('day');
 }
 
 export{handlerClickOnNav};
