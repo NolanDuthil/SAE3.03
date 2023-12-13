@@ -1,4 +1,3 @@
-import Calendar from "@toast-ui/calendar/*";
 import { M } from "./js/model.js";
 import { V } from "./js/view.js";
 
@@ -86,6 +85,18 @@ function handlerClickOnNav(ev) {
       ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
     }
     V.uicalendar.createEvents(all);
+  }
+
+  if (ev.target.id == "day") {
+    V.uicalendar.changeView("day");
+  }
+
+  if (ev.target.id == "week") {
+    V.uicalendar.changeView("week");
+  }
+
+  if (ev.target.id == "month") {
+    V.uicalendar.changeView("month");
   }
   
 }
