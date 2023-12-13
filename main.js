@@ -1,3 +1,4 @@
+import Calendar from "@toast-ui/calendar/*";
 import { M } from "./js/model.js";
 import { V } from "./js/view.js";
 
