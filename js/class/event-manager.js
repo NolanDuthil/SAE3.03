@@ -54,7 +54,7 @@ class EventManager {
     }
 
     Search(tag) {
-        let res = this.#events.filter(event => event.summary.toLowerCase().includes(tag.toLowerCase()) || event.location.toLowerCase().includes(tag.toLowerCase()));
+        let res = this.#events.filter(event => {return tag.every(tag => event.summary.toLowerCase().includes(tag.toLowerCase()) || event.location.toLowerCase().includes(tag.toLowerCase()))});
         return res.map(event => {
             let obj = event.toObject();
             obj.calendarId = this.#id;

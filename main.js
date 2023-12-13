@@ -110,7 +110,7 @@ function handlerClickOnNav(ev) {
   }
 
   if(ev.target.id == 'search'){
-    let search = ev.target.value;
+    let search = ev.target.value.split(' ');
     V.uicalendar.clear();
     V.uicalendar.createEvents(M.Search(search));
   }
