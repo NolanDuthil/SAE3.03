@@ -49,6 +49,10 @@ nav.addEventListener("click", handlerClickOnNav)
 let search = document.querySelector("#search");
 search.addEventListener("keyup", handlerClickOnNav)
 
-
+V.colorMap = {
+  mmi1 : {CM :"#660000", TD:"#990000",TP:"#CC0000",AUTRE:"#FF0000"},
+  mmi2 : {CM :"#355E3B", TD:"#228B22", TP:"#50C878",AUTRE:"#00FF00"},
+  mmi3 : {CM:"#00008B",TD:"#0047AB",TP:"#000FFF",AUTRE:"#0000FF"}
+}
 
 export { V };

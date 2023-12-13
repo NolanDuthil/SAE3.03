@@ -18,7 +18,7 @@ import { V } from "./js/view.js";
 // loadind data (and wait for it !)
 await M.init();
 
-V.uicalendar.createEvents(M.getEvents('mmi1'));
+/*V.uicalendar.createEvents(M.getEvents('mmi1'));
 
 V.uicalendar.createEvents(M.getEvents('mmi2'));
 
@@ -78,7 +78,33 @@ event3.forEach(event => {
     changes.backgroundColor = "#0000FF"
   }
   V.uicalendar.updateEvent(event.id, event.calendarId, changes);
+});*/
+
+let all = [...M.getEvents("mmi1"),...M.getEvents("mmi2"),...M.getEvents("mmi3")];
+
+for (let ev of all) {
+  ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
+}
+
+let mmi1 = [];
+let mmi2 = [];
+let mmi3 = [];
+
+all.forEach(el=> {
+  if (el.calendarId == "mmi1") {
+    mmi1.push(el);
+  }
+  else if (el.calendarId == "mmi2") {
+    mmi2.push(el);
+  }
+  else if (el.calendarId == "mmi3") {
+    mmi3.push(el);
+  }
 });
+
+V.uicalendar.createEvents(mmi1);
+V.uicalendar.createEvents(mmi2);
+V.uicalendar.createEvents(mmi3);
 
 function handlerClickOnNav(ev) {
   if (ev.target.id == "prev") {
@@ -105,14 +131,22 @@ function handlerClickOnNav(ev) {
 
   if(ev.target.parentNode.id == 'groupe') {
     V.uicalendar.clear();
-    V.uicalendar.createEvents(M.EventAllByGroup(ev.target.value));
+    all = M.EventAllByGroup(ev.target.value);
+    for (let ev of all) {
+      ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
+    }
+    V.uicalendar.createEvents(all);
     
   }
 
   if(ev.target.id == 'search'){
     let search = ev.target.value.split(' ');
     V.uicalendar.clear();
-    V.uicalendar.createEvents(M.Search(search));
+    all = M.Search(search);
+    for (let ev of all) {
+      ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
+    }
+    V.uicalendar.createEvents(all);
   }
   
 }
