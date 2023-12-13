@@ -26,9 +26,9 @@ M.EventAllByGroup = function(tag){
 }
 
 M.Search = function(tag){
-    let A1 = Events.mmi1.EventByGroup(tag);
-    let A2 = Events.mmi2.EventByGroup(tag);
-    let A3 = Events.mmi3.EventByGroup(tag);
+    let A1 = Events.mmi1.Search(tag);
+    let A2 = Events.mmi2.Search(tag);
+    let A3 = Events.mmi3.Search(tag);
 
     return [...A1, ...A2, ...A3];
 }

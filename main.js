@@ -111,7 +111,8 @@ function handlerClickOnNav(ev) {
 
   if(ev.target.id == 'search'){
     let search = ev.target.value;
-    console.log(M.Search(search));
+    V.uicalendar.clear();
+    V.uicalendar.createEvents(M.Search(search));
   }
   
 }
