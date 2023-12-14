@@ -13,32 +13,45 @@
   <div>
     <header>
       <nav class="nav">
-        <button id="prev">Précédent</button>
-        <button id="actu">Actuelle</button>
-        <button id="next">Suivant</button>
-        <button id="day">Jour</button>
-        <button id="week">Semaine</button>
-        <button id="month">Mois</button>
+        <button class="btn__control" id="prev">Précédent</button>
+        <button class="btn__actu" id="actu">Actuelle</button>
+        <button class="btn__control" id="next">Suivant</button>
+        <button class="btn__format" id="day">Jour</button>
+        <button class="btn__format" id="week">Semaine</button>
+        <button class="btn__format" id="month">Mois</button>
         <ul style="display: flex; flex-direction: row;">
-          <li style="padding-right: 2rem;">
-        <h2>Promos</h2>
-        <div>
-          <input type="checkbox" id="mmi1" name="MMI1" checked />
+          <li class="li__promos">
+        <div class="checkbox-wrapper-31">
+          <input type="checkbox" id="mmi1" name="MMI1" checked/>
+          <svg viewBox="0 0 35.6 35.6">
+            <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+            <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+            <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+          </svg>
           <label for="mmi1">MMI1</label>
         </div>
-        <div>
-          <input type="checkbox" id="mmi2" name="MMI2" checked />
-          <label for="mmi2">MMI2</label>
+        <div class="checkbox-wrapper-32">
+          <input type="checkbox" id="mmi2" name="MMI2" checked/>
+          <svg viewBox="0 0 35.6 35.6">
+            <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+            <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+            <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+          </svg>
+          <label for="mmi1">MMI2</label>
         </div>
-        <div>
-          <input type="checkbox" id="mmi3" name="MMI3" checked />
-          <label for="mmi3">MMI3</label>
+        <div class="checkbox-wrapper-33">
+          <input type="checkbox" id="mmi3" name="MMI3" checked/>
+          <svg viewBox="0 0 35.6 35.6">
+            <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+            <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+            <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+          </svg>
+          <label for="mmi1">MMI3</label>
         </div>
           </li>
 
           <li>
-        <h2>Groupe</h2>
-        <select name="groupe" id="groupe" multiple>
+        <select class="select__groupe" name="groupe" id="groupe">
           <option value="" selected disabled hidden>Choisir son groupe</option>
           <option class="mmi1" value="BUT1-G1">BUT1-G1</option>
           <option class="mmi1" value="BUT1-G21">BUT1-G21</option>
@@ -64,7 +77,7 @@
       </nav>
     </header>
 
-    <main class="main" id="calendar" style="height: 800px;"></main>
+    <main class="main" id="calendar" style="height: 1200px;"></main>
   </div>
 
   <script type="module" src="/main.js"></script>
