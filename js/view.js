@@ -24,7 +24,7 @@ V.uicalendar = new Calendar('#calendar', {
         borderLeft: 'none',
         borderTop: '1px solid #B213F2',
         borderBottom: '1px solid #B213F2',
-        backgroundColor: '#CBB7F4',
+        backgroundColor: '#FFFFFF',
         date:'#A713F2',
       },
       dayGrid: {
@@ -42,7 +42,7 @@ V.uicalendar = new Calendar('#calendar', {
         borderBottom: '1px solid #B213F2',
       },
       nowIndicatorPast: {
-        border: '1px solid #B213F2',
+        border: '1px solid #A713F2',
       },
       futureTime: {
         color: '#A713F2',
@@ -69,9 +69,9 @@ let search = document.querySelector("#search");
 search.addEventListener("keyup", handlerClickOnNav)
 
 V.colorMap = {
-  mmi1: { CM: "#660000", TD: "#990000", TP: "#CC0000", AUTRE: "#FF0000" },
-  mmi2: { CM: "#355E3B", TD: "#228B22", TP: "#50C878", AUTRE: "#00FF00" },
-  mmi3: { CM: "#00008B", TD: "#0047AB", TP: "#000FFF", AUTRE: "#0000FF" }
+  mmi1: { CM: "#660000", TD: "#990000", TP: "#CC0000", AUTRE: "#DB072B" },
+  mmi2: { CM: "#355E3B", TD: "#228B22", TP: "#50C878", AUTRE: "#54DB39" },
+  mmi3: { CM: "#00008B", TD: "#0047AB", TP: "#000FFF", AUTRE: "#4439DB" }
 }
 
 export { V };

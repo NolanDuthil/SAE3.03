@@ -67,15 +67,14 @@ function handlerClickOnNav(ev) {
     V.uicalendar.setCalendarVisibility("mmi3", ev.target.checked);
   }
 
-  if(ev.target.parentNode.id == 'groupe') {
+  if(ev.target.id == 'groupe') {
     V.uicalendar.clear();
     all = M.EventAllByGroup(ev.target.value);
     for (let ev of all) {
-      ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
+        ev.backgroundColor = V.colorMap[ev.calendarId][ev.type];
     }
-    V.uicalendar.createEvents(all); 
-    
-  }
+    V.uicalendar.createEvents(all);
+}
 
   if(ev.target.id == 'search'){
     let search = ev.target.value.split(' ');
@@ -107,11 +106,5 @@ if (window.matchMedia("(max-width: 400px)").matches){
   })
   V.uicalendar.changeView('day');
 }
-
-//sessionStorage.setItem("promos", "mmi1,mmi2,mmi3");
-
-var data = sessionStorage.getItem("promos");
-
-let datagr = data.split(",");
 
 export{handlerClickOnNav};
