@@ -43,7 +43,7 @@ class EventManager {
         });
     }
 
-    EventByGroup(groupe) {
+   EventByGroup(groupe) {
         let res = this.#events.filter(event => event.groups.includes(groupe));
         return res.map(event => {
             let obj = event.toObject();

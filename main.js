@@ -45,6 +45,8 @@ V.uicalendar.createEvents(mmi2);
 V.uicalendar.createEvents(mmi3);
 
 function handlerClickOnNav(ev) {
+
+  
   if (ev.target.id == "prev") {
     V.uicalendar.prev()
   }
