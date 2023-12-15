@@ -44,6 +44,31 @@ V.uicalendar.createEvents(mmi1);
 V.uicalendar.createEvents(mmi2);
 V.uicalendar.createEvents(mmi3);
 
+if (localStorage.getItem("promos") !== null) {
+  let filtre = localStorage.getItem("promos");
+  V.settings.promos = filtre;
+  filtre = filtre.split(',');
+  filtre.forEach(promo => {
+    let checkbox = document.querySelector("#" + promo);
+    checkbox.checked = true;
+  })
+  let p  = ["mmi1","mmi2","mmi3"];
+  p.forEach(element => {
+    if (V.settings.promos.includes(element) == false) {
+      V.uicalendar.setCalendarVisibility(element, false);
+    }
+  });
+}
+else {
+  localStorage.setItem("promos", "mmi1,mmi2,mmi3");
+  localStorage.setItem("group", "tout");
+  let promos = V.settings.promos;
+  promos = promos.split(",");
+  promos.forEach(element => {
+    V.uicalendar.createEvents(element)
+  });
+}
+
 function handlerClickOnNav(ev) {
 
   
@@ -67,6 +92,25 @@ function handlerClickOnNav(ev) {
 
   if (ev.target.id == "mmi3") {
     V.uicalendar.setCalendarVisibility("mmi3", ev.target.checked);
+  }
+
+  if (ev.target.id == "mmi1" || ev.target.id == "mmi2" || ev.target.id == "mmi3") {
+    V.uicalendar.setCalendarVisibility(ev.target.id, ev.target.checked);
+    let tab = localStorage.getItem("promos");
+    tab = tab.split(",");
+    if (tab.includes(ev.target.id)) {
+      let index = tab.indexOf(ev.target.id);
+      if (index !== -1) {
+        tab.splice(index, 1);
+      }
+    }
+    else {
+      tab.push(ev.target.id);
+    }
+    tab = tab.join(",");
+    localStorage.setItem("promos", tab);
+    console.log(tab);
+    console.log(localStorage)
   }
 
   if(ev.target.id == 'groupe') {

@@ -74,4 +74,9 @@ V.colorMap = {
   mmi3: { CM: "#00008B", TD: "#0047AB", TP: "#000FFF", AUTRE: "#4439DB" }
 }
 
+V.settings = {
+  promos: "",
+  groupe: ""
+}
+
 export { V };
